@@ -1,0 +1,60 @@
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
+#include <string.h>
+using namespace std;
+
+void escribir();
+void lectura();
+void aniadir();
+
+int main() {
+  escribir();
+  lectura();
+  aniadir();
+  return 0;
+}
+
+void escribir(){
+  ofstream archivo;
+  string nombreArchivo,frase;
+  cout<<Nombre del archivo: ;
+  getline(cin,nombreArchivo);
+  archivo.open(nombreArchivo.c_str(),ios::out);
+  if(archivo.fail()){
+    cout<<No se pudo abrir el archivo;
+    exit(1);
+  }
+  cout<<nDigite el texto del archivo: ;
+  getline(cin,frase);
+  archivo<<frase;
+  archivo.close();
+}
+
+void lectura(){
+  ifstream archivo;
+  string texto;
+  archivo.open(lectura.txt,ios::in);
+  if(archivo.fail()){
+    cout<<No se pudo abrir el archivo;
+    exit(1);
+  }
+    getline(archivo,texto);
+    cout<<texto<<endl;
+  }
+  archivo.close();
+}
+
+void aniadir(){
+  ofstream archivo;
+  string texto;
+  archivo.open(lectura.txt,ios::app);
+  if(archivo.fail()){
+    cout<<No se pudo abrir el archivo;
+    exit(1);
+  }
+  cout<<Digite el texto que quiere añadir: ;
+  getline(cin,texto);
+  archivo<<texto;
+  archivo.close();
+}
