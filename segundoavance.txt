@@ -1,0 +1,112 @@
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
+#include <string.h>
+#include <iomanip>
+using namespace std;
+
+void presentacion();
+void menu();
+void lectura();
+void alinearDerecha();
+void alinearIzquierda();
+void centrarTexto();
+void buscarPalabra();
+void reemplazarPalabra();
+void salir();
+
+int main() {
+  int opcion;
+  presentacion();
+  lectura();
+  do{
+  menu();cin>>opcion;
+  switch(opcion){
+    case 1:
+      alinearDerecha();
+      break;
+    case 2:
+      alinearIzquierda();
+      break;
+    case 3:
+      centrarTexto();
+      break;
+    case 4:
+      buscarPalabra();
+      break;
+    case 5:
+      reemplazarPalabra();
+      break;
+    case 6:
+      salir();
+      break;
+    default:
+    cout<<nNo existe opcion;
+  }}
+  while(opcion!=6);
+  return 0;
+}
+
+
+void lectura(){
+  ifstream archivo;
+  string nombreArchivo,texto;
+  cout<<nIngrese el nombre del archivo que desea editar: ;
+  getline(cin,nombreArchivo);
+  cout<<<<endl;
+  archivo.open(nombreArchivo.c_str(),ios::in);
+  if(archivo.fail()){
+    cout<<nNo se pudo abrir el archivo<<endl;
+    exit(1);
+  }
+    getline(archivo,texto);
+  }
+  archivo.close();
+}
+
+
+void menu(){
+  cout<<Seleccione una opcion: ;
+  cout<<n1. Alinear texto a la derecha;
+  cout<<n2. Alinear texto a la izquierda;
+  cout<<n3. Centrar texto;
+  cout<<n4. Buscar una palabra;
+  cout<<n5. Reemplazar una palabra;
+  cout<<n6. Salir del programa;
+  cout<<n de texton***************n;
+}
+
+
+void salir(){
+  exit(1);
+}
+
+
+void alinearDerecha(){
+
+
+}
+
+
+void alinearIzquierda(){
+
+
+}
+
+
+void centrarTexto(){
+
+
+}
+
+
+void buscarPalabra(){
+
+
+}
+
+
+void reemplazarPalabra(){
+
+
+}
